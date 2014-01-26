@@ -8,9 +8,9 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Article Schema
+ * MediaFile Schema
  */
-var ArticleSchema = new Schema({
+var MediaFileSchema = new Schema({
     created: {
         type: Date,
         default: Date.now
@@ -20,7 +20,17 @@ var ArticleSchema = new Schema({
         default: '',
         trim: true
     },
-    content: {
+    format: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    size: {
+        type: String,
+        default: '',
+        trim: true
+    },
+    location: {
         type: String,
         default: '',
         trim: true
@@ -34,17 +44,17 @@ var ArticleSchema = new Schema({
 /**
  * Validations
  */
-ArticleSchema.path('title').validate(function(title) {
+MediaFileSchema.path('title').validate(function(title) {
     return title.length;
 }, 'Title cannot be blank');
 
 /**
  * Statics
  */
-ArticleSchema.statics.load = function(id, cb) {
+MediaFileSchema.statics.load = function(id, cb) {
     this.findOne({
         _id: id
     }).populate('user', 'name username').exec(cb);
 };
 
-mongoose.model('Article', ArticleSchema);
+mongoose.model('MediaFile', MediaFileSchema);

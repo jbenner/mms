@@ -1,0 +1,18 @@
+<section data-ng-controller="MediaFilesController" data-ng-init="findOne()">
+    <span>{{mediaFile.created | date:'medium'}}</span>/
+    <span>{{mediaFile.user.name}}</span>
+    <h2>{{mediaFile.title}}</h2>
+    <h2>{{mediaFile.name}}</h2>
+    <h2>{{mediaFile.format}}</h2>
+    <h2>{{mediaFile.size}}</h2>
+    <h2>{{mediaFile.location}}</h2>
+    <div data-ng-show="global.user._id == mediaFile.user._id">
+        <a class="btn" href="/#!/mediaFiles/{{mediaFile._id}}/edit">
+        	<i class="glyphicon glyphicon-edit"></i>
+        </a>
+        <a class="btn" data-ng-click="remove();">
+            <i class="glyphicon glyphicon-trash"></i>
+        </a>
+    </div>
+    <div>{{mediaFile.content}}</div>
+</section>

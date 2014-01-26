@@ -1,0 +1,18 @@
+<section data-ng-controller="MediaFilesController" data-ng-init="find()">
+	<ul class="mediaFiles unstyled">
+		<li data-ng-repeat="mediaFile in mediaFiles">
+			<span>{{mediaFile.created | date:'medium'}}</span> /
+			<span>{{mediaFile.user.name}}</span>
+			<h2><a data-ng-href="#!/mediaFiles/{{mediaFile._id}}">{{mediaFile.title}}</a></h2>
+            <dl>
+                <dt>Format: </dt>
+                <dd>{{mediaFile.format}}</dd>
+                <dt>Size: </dt>
+                <dd>{{mediaFile.size}}</dd>
+                <dt>Location: </dt>
+                <dd>{{mediaFile.location}}</dd>
+            </dl>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!mediaFiles || mediaFiles.length">No media files yet. <br> Why don't you <a href="/#!/mediaFiles/create">Create One</a>?</h1>
+</section>
