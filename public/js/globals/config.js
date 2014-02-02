@@ -14,6 +14,9 @@
             when('/mediaFiles/:mediaFileId/edit', {
                 templateUrl: 'views/mediaFiles/edit.html'
             }).
+            when('/mediaFiles/:mediaFileId/remove', {
+                templateUrl: 'views/mediaFiles/remove.html'
+            }).
             when('/mediaFiles/:mediaFileId', {
                 templateUrl: 'views/mediaFiles/view.html'
             }).

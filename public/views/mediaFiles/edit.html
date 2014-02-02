@@ -1,31 +1,51 @@
 <section data-ng-controller="MediaFilesController" data-ng-init="findOne()">
+    <span>{{mediaFile.created | date:'medium'}}</span>
+    /
+    <span>{{mediaFile.user.name}}</span>
+
+    <h3>{{mediaFile.title}}</h3>
+
+    <dl>
+        <dt>Format</dt>
+        <dd>{{mediaFile.format}}</dd>
+
+        <dt>Size</dt>
+        <dd>{{mediaFile.size}}</dd>
+
+        <dt>Location</dt>
+        <dd>{{mediaFile.location}}</dd>
+    </dl>
+
+    <hr>
+
 	<form class="form-horizontal col-md-6" role="form" data-ng-submit="update()">
 		<div class="form-group">
 			<label for="title" class="col-md-2 control-label">Title</label>
 			<div class="col-md-10">
-				<input type="text" class="form-control" data-ng-model="title" id="title" placeholder="Title">
+				<input type="text" class="form-control" data-ng-model="mediaFile.title" id="title" placeholder="Title">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="format" class="col-md-2 control-label">Format</label>
 			<div class="col-md-10">
-				<input data-ng-model="format" id="format" cols="30" rows="10" placeholder="Format" class="form-control">
+				<input data-ng-model="mediaFile.format" id="format" placeholder="Format" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="size" class="col-md-2 control-label">Size</label>
 			<div class="col-md-10">
-				<input data-ng-model="size" id="size" cols="30" rows="10" placeholder="Size" class="form-control">
+				<input data-ng-model="mediaFile.size" id="size" placeholder="Size" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
 			<label for="location" class="col-md-2 control-label">Location</label>
 			<div class="col-md-10">
-				<input data-ng-model="location" id="location" cols="30" rows="10" placeholder="Location" class="form-control">
+				<input data-ng-model="mediaFile.location" id="location" placeholder="Location" class="form-control">
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-md-offset-2 col-md-10">
+				<a data-ng-href="#!/mediaFiles/{{profile._id}}" class="btn btn-default">Cancel</a>
 				<button type="submit" class="btn btn-default">Submit</button>
 			</div>
 		</div>

@@ -42,7 +42,6 @@
                 profile.updated = [];
             }
             profile.updated.push(new Date().getTime());
-            profile.media = ['one', 'two', 'three'];
 
             profile.$update(function() {
                 $location.path('profiles/' + profile._id);

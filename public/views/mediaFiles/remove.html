@@ -1,0 +1,28 @@
+<section data-ng-controller="MediaFilesController" data-ng-init="findOne()">
+    <span>{{mediaFile.created | date:'medium'}}</span>
+    /
+    <span>{{mediaFile.user.name}}</span>
+
+    <h3>{{mediaFile.title}}</h3>
+
+    <dl>
+        <dt>Format</dt>
+        <dd>{{mediaFile.format}}</dd>
+
+        <dt>Size</dt>
+        <dd>{{mediaFile.size}}</dd>
+
+        <dt>Location</dt>
+        <dd>{{mediaFile.location}}</dd>
+    </dl>
+
+    <hr>
+
+    <div class="alert alert-danger">
+        <strong>Remove this media file?</strong>
+        <br>
+        <br>
+        <a data-ng-href="#!/mediaFiles/{{mediaFile._id}}" class="btn btn-default"><i class="glyphicon glyphicon-chevron-left"></i>No - take me back</a>
+        <a data-ng-click="remove();" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i>Yes - remove it</a>
+    </div>
+</section>

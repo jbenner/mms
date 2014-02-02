@@ -4,14 +4,14 @@
     <span>{{profile.created | date:'medium'}}</span>
 
     <h3>{{profile.title}}</h3>
-
     <dl>
-        <dt>Paths: </dt>
+        <dt>Paths</dt>
         <dd>{{profile.paths}}</dd>
 
-        <dt>Active: </dt>
+        <dt>Active</dt>
         <dd>{{profile.active}}</dd>
     </dl>
+
     <div data-ng-show="global.user._id == profile.user._id">
         <a class="btn" href="/#!/profiles/{{profile._id}}/media/list"><i class="glyphicon glyphicon-list-alt"></i></a>
         <a class="btn" href="/#!/profiles/{{profile._id}}/edit"><i class="glyphicon glyphicon-edit"></i></a>
