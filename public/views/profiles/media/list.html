@@ -1,0 +1,28 @@
+<section data-ng-controller="ProfilesController" data-ng-init="findOne()">
+    <span>{{profile.user.name}}</span>
+    /
+    <span>{{profile.created | date:'medium'}}</span>
+
+    <h3>{{profile.title}}</h3>
+
+    <dl>
+        <dt>Paths: </dt>
+        <dd>{{profile.paths}}</dd>
+
+        <dt>Active: </dt>
+        <dd>{{profile.active}}</dd>
+    </dl>
+
+    <hr>
+
+    <div id="mediaInactive" class="well" data-ng-show="profile.active == false">
+        <p>This profile is currently inactive - click <a class="btn" href="/#!/profiles/{{profile._id}}/edit"><i class="glyphicon glyphicon-edit"></i>here to activate it</a></p>
+    </div>
+
+    <h4>Media:</h4>
+    <ul class="list-unstyled">
+        <li data-ng-repeat="item in profile.media">{{item}}</li>
+    </ul>
+
+    <a data-ng-href="#!/profiles/{{profile._id}}" class="btn btn-default">Back</a>
+</section>

@@ -2,5 +2,6 @@
 .nodemonignore
 .sass-cache/
 node_modules/
-public/lib
 test/coverage/
+public/dist/js/
+public/dist/css/

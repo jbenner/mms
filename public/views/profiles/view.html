@@ -1,0 +1,20 @@
+<section data-ng-controller="ProfilesController" data-ng-init="findOne()">
+    <span>{{profile.user.name}}</span>
+    /
+    <span>{{profile.created | date:'medium'}}</span>
+
+    <h3>{{profile.title}}</h3>
+
+    <dl>
+        <dt>Paths: </dt>
+        <dd>{{profile.paths}}</dd>
+
+        <dt>Active: </dt>
+        <dd>{{profile.active}}</dd>
+    </dl>
+    <div data-ng-show="global.user._id == profile.user._id">
+        <a class="btn" href="/#!/profiles/{{profile._id}}/media/list"><i class="glyphicon glyphicon-list-alt"></i></a>
+        <a class="btn" href="/#!/profiles/{{profile._id}}/edit"><i class="glyphicon glyphicon-edit"></i></a>
+        <a class="btn" href="/#!/profiles/{{profile._id}}/remove"><i class="glyphicon glyphicon-trash"></i></a>
+    </div>
+</section>

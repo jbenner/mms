@@ -1,0 +1,44 @@
+<section data-ng-controller="ProfilesController" data-ng-init="findOne()">
+    <span>{{profile.user.name}}</span>
+    /
+    <span>{{profile.created | date:'medium'}}</span>
+
+    <h3>{{profile.title}}</h3>
+
+    <dl>
+        <dt>Paths: </dt>
+        <dd>{{profile.paths}}</dd>
+
+        <dt>Active: </dt>
+        <dd>{{profile.active}}</dd>
+    </dl>
+
+    <hr>
+
+	<form class="form-horizontal col-md-6" role="form" data-ng-submit="update()">
+		<div class="form-group">
+			<label for="title" class="col-md-2 control-label">Title</label>
+			<div class="col-md-10">
+				<input data-ng-model="profile.title" id="title" class="form-control">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="paths" class="col-md-2 control-label">Paths</label>
+			<div class="col-md-10">
+				<input data-ng-model="profile.paths" id="format" class="form-control">
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="active" class="col-md-2 control-label">Active</label>
+			<div class="col-md-10">
+				<input data-ng-model="profile.active" id="format" type="checkbox">
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<a data-ng-href="#!/profiles/{{profile._id}}" class="btn btn-default">Cancel</a>
+				<button type="submit" class="btn btn-default">Submit</button>
+			</div>
+		</div>
+	</form>
+</section>
